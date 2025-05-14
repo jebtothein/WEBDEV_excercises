@@ -1,0 +1,110 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body 
+{
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 
+{
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/*Box yang diluar (yang buat jadi bentuk horizontal*/
+.horizontal-timer 
+{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*Angka jam nya (lebih kayak buat spacing nya*/
+.time-unit 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  padding: 0 10px;
+}
+
+/*Angka jam nya*/
+.time-value 
+{
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1;
+}
+
+/*label, tulisan dibawahnya*/
+.time-label 
+{
+  font-size: 0.75rem;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/*pembatas ':' nya*/
+.time-separator 
+{
+  color: white;
+  font-size: 2rem;
+  margin-top: -10px;
+  font-weight: bold;
+}
+
+/*buat kayak nyesuain gt, supaya tidak hancur kl ada perubahan*/
+@media (max-width: 768px) 
+{
+  .horizontal-timer {
+    gap: 4px;
+    padding: 12px;
+  }
+  
+  .time-value {
+    font-size: 1.8rem;
+  }
+  
+  .time-unit {
+    min-width: 50px;
+  }
+  
+  .time-separator {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+

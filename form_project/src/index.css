@@ -1,0 +1,178 @@
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body 
+{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(62, 62, 62);
+  color: black;
+}
+
+form 
+{
+  border: 1px solid black;
+  background: white;
+  width: 230px;
+  height: 350px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h1 
+{
+  color: white;
+  position: absolute; 
+  left: 50%; 
+  top: 22%; 
+  transform: translate(-50%, -50%); 
+  text-align: center; 
+}
+
+.error 
+{
+  position: absolute;
+  color: red;
+  font-size: 0.8rem;
+  width: 200px;
+  left: 0px;
+}
+
+.formGroups1 
+{
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  height: 60px; 
+}
+
+.formGroups2 
+{
+  position: absolute;
+  top: 90px;
+  left: 15px;
+  height: 60px; 
+}
+
+.formGroups 
+{
+  position: absolute;
+  top: 160px;
+  left: 15px;
+  height: 80px;
+  width: 200px; 
+}
+
+.formGroups .error 
+{
+  position: absolute;
+  top: 65px; 
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  width: 100%; 
+  margin-top: 5px; 
+}
+
+.formLable1 
+{ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.formLable2 
+{ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.formLable3 
+{ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+
+.formName 
+{
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 200px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.formEmail 
+{
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 200px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.formLable4, .formLable5 {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.formLable4 
+{
+  top: 25px; 
+  left: 0;
+}
+
+.formLable5 
+{ 
+  top: 0px; 
+  left: 80px;
+}
+
+
+.formRadio 
+{
+  margin: 0;
+}
+
+.button {
+  position: absolute;
+  bottom: 20px;
+  left: 75px;
+  background-color: #474747;
+  color: white;
+  border: none;
+  width: 80px;
+  height: 30px;
+  font-weight: bold;
+}
+
+.formGroups1 .error { top: 50px; }
+.formGroups2 .error { top: 50px; }
+.formGroups .error { top: 45px; }
+
