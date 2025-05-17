@@ -2,7 +2,6 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: white;
   background-color: white;
@@ -23,29 +22,210 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   color: black;
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-h3{
-  color: black;
+h3 {
+  font-optical-sizing: auto;
+  font-style: inherit;
+  color: #686868;
+  font-family: "Epilogue", sans-serif;
+  align-items: flex-start;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 1.2;
+  font-weight: 550;
 }
 
-.toptaskbar{
-  color: black;
+.toptaskbar {
   display: flex;
-  justify-content: start;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #f9f9f9;
+  font-family: "Epilogue", sans-serif;
+  color: black;
+  height: 50px;
 }
 
-.taskbar1, .taskbar2, .taskbar3, .taskbar4, .taskbar5 {
+.toptaskbarleft,
+.toptaskbarright {
+  display: flex;
+  align-items: center;
+}
+
+.toptaskbarleft {
+  gap: 24px;
+}
+
+.toptaskbarright {
+  gap: 16px;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #686868;
+  transition: color 0.2s ease;
+}
+
+button:hover {
+  color: black;
+  border-radius: 4px;
+  animation: squish 200ms ease-in-out;
+}
+
+.login:hover{
+  background-color: black ;
+  color: white;
+}
+
+.register:hover{
+  background-color: black ;
+  color: white;
+}
+
+.learmorebutton:hover{
+  background-color: black;
+  color: white;
+}
+
+
+.featuresdropselection {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 150px;
+  align-items: flex-start;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.featuresdropselection.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.featuresdropselection.slide-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+
+/* Optional: Fully hide from layout (e.g. to stop keyboard nav) */
+.featuresdropselection.hidden {
+  display: none !important;
+}
+
+.featuresdropselection button img {
+  width: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.taskbar1,
+.taskbar2 {
   position: relative;
 }
 
+.mainpage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 40px;
+}
 
+.mainpage > :not(.person) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
 
-.mainpage{
+.mainpage h3 {
+  margin: 8px 0;
+  line-height: 1.4;
+  color: #686868;
+  font-family: "Epilogue", sans-serif;
+}
+
+.mainpage h1 {
+  margin-bottom: 12px;
+}
+
+.learmorebutton {
+  margin-top: 20px;
+  padding: 14px 24px;
+  font-size: 16px;
+  background-color: white;
   color: black;
-  justify-content: start;
+  border: 1px ridge black;
+  border-radius: 8px;
+  font-family: "Epilogue", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.person {
+  display: flex;
+  width: 500px;
+  height: 595px;
+  flex-shrink: 0;
+}
+
+.person img {
+  width: 450px;
+  height: auto;
+}
+
+.sponsors {
+  display: flex;
+  justify-content: space-between; /* or use center/start depending on alignment */
+  align-items: center;
+  gap: 24px; /* adjust spacing between logos */
+  margin-top: 40px; /* optional spacing */
+  padding: 0 60px;   /* optional side padding */
+  flex-wrap: wrap;   /* makes it responsive on smaller screens */
+}
+
+.sponsors img {
+  height: 32px; /* or adjust based on your design */
+  width: auto;
 }
 
 
+/* Animations */
+@keyframes squish {
+  50% {
+    transform: scale(0.9, 0.9);
+  }
+}
+
+@keyframes slideInTop {
+from { transform: translateY(-20%); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOutTop {
+from { transform: translateY(0); opacity: 1; }
+to { transform: translateY(-20%); opacity: 0; }
+}
 
