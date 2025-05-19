@@ -11,9 +11,9 @@ import sponsor3 from '../assets/images/client-maker.svg'
 import sponsor4 from '../assets/images/client-meet.svg'
 
 export const Desktop_Components = () => {
-  const [showFeatures, setShowFeatures] = useState(false);
-  const [showCompany, setShowCompany] = useState(false);
-
+  const [showFeatures, setShowFeatures] = useState(false); // this basically to show the state of the value
+  const [showCompany, setShowCompany] = useState(false);   // In thids case, when the useState condition is false, hence we show the dropdown
+                                                           // If the useState condition wasn't false, hence the dropdown will be hidden.
   return (
     <div>
       <div className="toptaskbar">
@@ -24,16 +24,16 @@ export const Desktop_Components = () => {
             <button className="featuresdroplabel" onClick={() => setShowFeatures((prev) => !prev)}>
               Features <img src={checvrondown} alt="arrowchevrondown" />
             </button>
-            <div className={`featuresdropselection ${showFeatures ? "slide-in" : "slide-out"}`}>
-              <button className="choice1"><img src={todolist} /> ‎ㅤ To do list</button>
-              <button className="choice2"><img src={calendar} /> ‎ㅤ Calendar</button>
+            <div className={`featuresdropselection ${showFeatures ? "slide-in" : "slide-out"}`}> {/* basically the featuresdropselection is to connect to the css (the className) */}
+              <button className="choice1"><img src={todolist} /> ‎ㅤ To do list</button>  {/* the ${showFeatures ? "slide-in" : "slide-out"} part is used as a conditional class */}
+              <button className="choice2"><img src={calendar} /> ‎ㅤ Calendar</button>    {/* if the show feature is true,hence slide in the class, if the show feature is flase, hence slide out */}
               <button className="choice3"><img src={reminders} /> ‎ㅤ Reminders</button>
               <button className="choice4"><img src={planning} /> ‎ㅤ Planning</button>
             </div>
           </div>
 
           <div className="taskbar2">
-            <button className="companydroplabel" onClick={() => setShowCompany((prev) => !prev)}>
+            <button className="companydroplabel" onClick={() => setShowCompany((prev) => !prev)}> {/* This function applies the same thing as the one before */}
               Company <img src={checvrondown} alt="arrowchevrondown" />
             </button>
             <div className={`featuresdropselection ${showCompany ? "slide-in" : "slide-out"}`}>

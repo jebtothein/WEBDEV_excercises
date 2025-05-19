@@ -95,54 +95,54 @@ button:hover {
   color: white;
 }
 
-
+/* The dropdown menus*/
 .featuresdropselection {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
+  flex-direction: column;         /*Stacking it vertically*/
+  position: absolute;             /*Removed the flow of the document, and positioning it relatively to its parent button*/
+  top: 100%;                      /*posisitioned it right below the parent button*/
   left: 0;
   background-color: white;
   border: 1px solid #ccc;
   padding: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 10;                    /*ensuring it that the dropdown always above the other elements*/
   width: 150px;
   align-items: flex-start;
   text-align: left;
+  /* The animation intial codes*/
   opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
+  transform: translateY(-10px);   /*move it up a bit*/
+  pointer-events: none;           /*preventing the hidden dropdown to interact while being hidden*/
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.featuresdropselection.slide-in {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.featuresdropselection.slide-in { /*getting in*/
+  opacity: 1;                    
+  transform: translateY(0);       /*move the dropdown to the original position*/
+  pointer-events: auto;           /*now it's clickable (could be interacted)*/
 }
 
-.featuresdropselection.slide-out {
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
+.featuresdropselection.slide-out {/*getting out*/
+  opacity: 0;                     
+  transform: translateY(-10px);   /*move the dropdown up*/
+  pointer-events: none;           /*now it's unclickable (couldn't be interacted)*/
 }
 
-
-/* Optional: Fully hide from layout (e.g. to stop keyboard nav) */
-.featuresdropselection.hidden {
+.featuresdropselection.hidden {   /*if the dropdown doesnt't needed completely hid it*/
   display: none !important;
 }
 
 .featuresdropselection button img {
-  width: 14px;
+  width: 14px;                    /*spacing for the dropdown (css styles)*/
   margin-right: 8px;
   vertical-align: middle;
 }
 
+/*both of the parents for the dropdown buttons*/
 .taskbar1,
 .taskbar2 {
-  position: relative;
+  position: relative;             /*to make the dropdown position relatives to the parents*/
 }
 
 .mainpage {
@@ -153,6 +153,7 @@ button:hover {
   gap: 40px;
 }
 
+/*all of the mainpage layout except the image themselves*/
 .mainpage > :not(.person) {
   display: flex;
   flex-direction: column;
@@ -184,6 +185,7 @@ button:hover {
   cursor: pointer;
 }
 
+/*the image css*/
 .person {
   display: flex;
   width: 500px;
@@ -196,18 +198,18 @@ button:hover {
   height: auto;
 }
 
+/*the sponsor css*/
 .sponsors {
-  display: flex;
-  justify-content: space-between; /* or use center/start depending on alignment */
-  align-items: center;
-  gap: 24px; /* adjust spacing between logos */
-  margin-top: 40px; /* optional spacing */
-  padding: 0 60px;   /* optional side padding */
-  flex-wrap: wrap;   /* makes it responsive on smaller screens */
+  display: flex;                     /*the horizontal layout of the sponsor images*/
+  justify-content: space-between;   
+  gap: 24px;                         /*spacing between them*/
+  margin-top: 40px;   
+  padding: 0 60px;    
+  flex-wrap: wrap;                   /*wrap the logos if the screen was too small*/
 }
 
 .sponsors img {
-  height: 32px; /* or adjust based on your design */
+  height: 32px; 
   width: auto;
 }
 
