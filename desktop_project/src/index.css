@@ -213,6 +213,52 @@ button:hover {
   width: auto;
 }
 
+@media (max-width: 375px) {
+  .mainpage {
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 40px;
+  }
+
+  .mainpage > div {
+    display: block;
+    flex: unset;
+    align-items: unset;
+    width: 100%;
+  }
+
+  .person {
+    order: -1; /* show image first */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .person img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .maincontent {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sponsors {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .sponsors img {
+    height: 16px;
+  }
+}
+
 
 /* Animations */
 @keyframes squish {
@@ -230,4 +276,3 @@ to { transform: translateY(0); opacity: 1; }
 from { transform: translateY(0); opacity: 1; }
 to { transform: translateY(-20%); opacity: 0; }
 }
-
