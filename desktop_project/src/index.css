@@ -90,7 +90,7 @@ button:hover {
   color: white;
 }
 
-.learmorebutton:hover{
+.learnmorebutton:hover{
   background-color: black;
   color: white;
 }
@@ -172,7 +172,7 @@ button:hover {
   margin-bottom: 12px;
 }
 
-.learmorebutton {
+.learnmorebutton {
   margin-top: 20px;
   padding: 14px 24px;
   font-size: 16px;
@@ -217,10 +217,21 @@ button:hover {
   width: auto;
 }
 
+/* Show only on mobile */
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 376px) {
-  .toptaskbar{
+    .toptaskbar{
     font-size: 13px;
   }
+
+  .taskbar1, .taskbar2, .taskbar3, .taskbar4, .taskbar5, .taskbar6{
+    display: none !important;
+  }
+
+  
   .mainpage {
     display: flex;
     flex-direction: column;
@@ -270,7 +281,7 @@ button:hover {
     font-size: 20px;
   }
 
-  .learmorebutton {
+  .learnmorebutton {
     margin: 20px auto 0 auto; /* center horizontally */
     display: flex;
     justify-content: center;
@@ -310,6 +321,63 @@ button:hover {
     height: 17.5px;
     width: auto;
   }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .mobile-slide-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+    background: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    padding: 2rem;
+  }
+
+  .mobile-slide-menu.slideInRight {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-slide-menu.slideOutLeft {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  .close-button {
+    align-self: flex-end;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+
+  .mobile-menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .featuresdropselection.mobile {
+    position: static;
+    box-shadow: none;
+    border: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0;
+  }
 }
 
 
@@ -330,4 +398,26 @@ to { transform: translateY(0); opacity: 1; }
 @keyframes slideOutTop {
 from { transform: translateY(0); opacity: 1; }
 to { transform: translateY(-20%); opacity: 0; }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: -1;
+  }
 }

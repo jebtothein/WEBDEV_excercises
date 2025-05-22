@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import heroImage from '../assets/images/image-hero-desktop.png';
-import heroImage2 from '../assets/images/image-hero-mobile.png'
+import heroImage2 from '../assets/images/image-hero-mobile.png';
 import checvrondown from '../assets/images/icon-arrow-down.svg';
 import todolist from '../assets/images/icon-todo.svg';
 import calendar from '../assets/images/icon-calendar.svg';
@@ -10,20 +10,37 @@ import sponsor1 from '../assets/images/client-audiophile.svg';
 import sponsor2 from '../assets/images/client-databiz.svg';
 import sponsor3 from '../assets/images/client-maker.svg';
 import sponsor4 from '../assets/images/client-meet.svg';
+import menubutton from '../assets/images/icon-menu.svg';
+import closemenu from '../assets/images/icon-close-menu.svg'
 
 export const Desktop_Components = () => {
   const [showFeatures, setShowFeatures] = useState(false);
   const [showCompany, setShowCompany] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 375);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 376);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [menuAnimation, setMenuAnimation] = useState(""); // for sliding animation classes
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 375);
+      setIsSmallScreen(window.innerWidth <= 376);
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const openMenu = () => {
+    setShowMobileMenu(true);
+    setMenuAnimation("slideInRight");
+  };
+
+  const closeMenu = () => {
+    setMenuAnimation("slideOutLeft");
+    setTimeout(() => {
+      setShowMobileMenu(false);
+      setMenuAnimation("");
+    }, 300);
+  };
 
   return (
     <div className={isSmallScreen ? "small-screen" : ""}>
@@ -31,6 +48,7 @@ export const Desktop_Components = () => {
         <div className="toptaskbarleft">
           <h1>snap</h1>
 
+          {/* Features dropdown */}
           <div className="taskbar1">
             <button
               className="featuresdroplabel"
@@ -44,20 +62,21 @@ export const Desktop_Components = () => {
               }`}
             >
               <button className="choice1">
-                <img src={todolist} /> ‎ㅤ To do list
+                <img src={todolist} alt="To do list icon" /> To do list
               </button>
               <button className="choice2">
-                <img src={calendar} /> ‎ㅤ Calendar
+                <img src={calendar} alt="Calendar icon" /> Calendar
               </button>
               <button className="choice3">
-                <img src={reminders} /> ‎ㅤ Reminders
+                <img src={reminders} alt="Reminders icon" /> Reminders
               </button>
               <button className="choice4">
-                <img src={planning} /> ‎ㅤ Planning
+                <img src={planning} alt="Planning icon" /> Planning
               </button>
             </div>
           </div>
 
+          {/* Company dropdown */}
           <div className="taskbar2">
             <button
               className="companydroplabel"
@@ -92,6 +111,73 @@ export const Desktop_Components = () => {
           <div className="taskbar6">
             <button className="register">Register</button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="menu mobile-only">
+            <button className="menudroplable" onClick={openMenu}>
+              <img src={menubutton} alt="menu button" />
+            </button>
+          </div>
+
+          {/* Mobile Slide Menu */}
+          {showMobileMenu && (
+            <div className={`mobile-slide-menu ${menuAnimation}`}>
+              <button className="close-button" onClick={closeMenu}>
+                <img src={closemenu} alt="close menu icon" />
+              </button>
+
+              <div className="mobile-menu-section">
+                <button
+                  onClick={() => setShowFeatures((prev) => !prev)}
+                  className="featuresdroplabel"
+                >
+                  Features <img src={checvrondown} alt="arrow" />
+                </button>
+                {showFeatures && (
+                  <div className="featuresdropselection mobile">
+                    <button className="choice1">
+                      <img src={todolist} alt="todo icon" /> To do list
+                    </button>
+                    <button className="choice2">
+                      <img src={calendar} alt="calendar icon" /> Calendar
+                    </button>
+                    <button className="choice3">
+                      <img src={reminders} alt="reminders icon" /> Reminders
+                    </button>
+                    <button className="choice4">
+                      <img src={planning} alt="planning icon" /> Planning
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <div className="mobile-menu-section">
+                <button
+                  onClick={() => setShowCompany((prev) => !prev)}
+                  className="companydroplabel"
+                >
+                  Company <img src={checvrondown} alt="arrow" />
+                </button>
+                {showCompany && (
+                  <div className="featuresdropselection mobile">
+                    <button className="choiceone1">History</button>
+                    <button className="choicetwo2">Our team</button>
+                    <button className="choicethree3">Blog</button>
+                  </div>
+                )}
+              </div>
+
+              <div className="mobile-menu-section">
+                <button className="careers">Careers</button>
+                <button className="about">About</button>
+              </div>
+
+              <div className="mobile-menu-section">
+                <button className="login">Login</button>
+                <button className="register">Register</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -102,14 +188,13 @@ export const Desktop_Components = () => {
             Get your team in sync, no matter your location. Streamline
             processes, create team rituals, and watch productivity soar
           </h3>
-          <button className="learmorebutton">Learn more</button>
-          <div>ㅤ </div>
-          <div>ㅤ </div>
+          <button className="learnmorebutton">Learn more</button>
+
           <div className="sponsors">
-            <img src={sponsor1} alt="sponsor" />
-            <img src={sponsor2} alt="sponsor" />
-            <img src={sponsor3} alt="sponsor" />
-            <img src={sponsor4} alt="sponsor" />
+            <img src={sponsor1} alt="sponsor audiophile" />
+            <img src={sponsor2} alt="sponsor databiz" />
+            <img src={sponsor3} alt="sponsor maker" />
+            <img src={sponsor4} alt="sponsor meet" />
           </div>
         </div>
 
@@ -118,15 +203,15 @@ export const Desktop_Components = () => {
         </div>
 
         <div className="person2">
-          <img src={heroImage2} alt="mobil ver" />
+          <img src={heroImage2} alt="mobile version" />
         </div>
-
       </div>
     </div>
   );
 };
 
 export default Desktop_Components;
+
 
 
 
