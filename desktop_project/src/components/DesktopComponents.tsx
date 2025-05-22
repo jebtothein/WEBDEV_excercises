@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import heroImage from '../assets/images/image-hero-desktop.png';
+import heroImage2 from '../assets/images/image-hero-mobile.png'
 import checvrondown from '../assets/images/icon-arrow-down.svg';
 import todolist from '../assets/images/icon-todo.svg';
 import calendar from '../assets/images/icon-calendar.svg';
@@ -115,12 +116,22 @@ export const Desktop_Components = () => {
         <div className="person">
           <img src={heroImage} alt="person holding laptop" />
         </div>
+
+        <div className="person2">
+          <img src={heroImage2} alt="mobil ver" />
+        </div>
+
       </div>
     </div>
   );
 };
 
 export default Desktop_Components;
+
+
+
+
+
 
 
 

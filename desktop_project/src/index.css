@@ -198,6 +198,10 @@ button:hover {
   height: auto;
 }
 
+.person2{
+  display: none !important;
+}
+
 /*the sponsor css*/
 .sponsors {
   display: flex;                     /*the horizontal layout of the sponsor images*/
@@ -213,38 +217,84 @@ button:hover {
   width: auto;
 }
 
-.small-screen {
-   .mainpage {
+@media (max-width: 376px) {
+  .toptaskbar{
+    font-size: 13px;
+  }
+  .mainpage {
+    display: flex;
     flex-direction: column;
-    padding: 40px 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
     gap: 40px;
+    width: 100%; /* changed from 173% to prevent overflow */
+    min-height: 100vh;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .mainpage > div {
-    display: block;
-    flex: unset;
-    align-items: unset;
-    width: 100%;
-  }
-
-  .person {
-    order: -1; /* show image first */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .person img {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .maincontent {
-    text-align: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .maincontent h1,
+  .maincontent h3 {
+    text-align: center;
+    margin: 0 0 12px 0;
+    width: 100%;
+  }
+
+  .maincontent h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+  }
+
+
+  .maincontent h3 {
+    font-size: 20px;
+  }
+
+  .learmorebutton {
+    margin: 20px auto 0 auto; /* center horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 220px;
+    font-size: 20px;
+  }
+
+  .person {
+    display: none !important;
+  }
+
+  .person2 {
+    display: flex !important;
+    order: -1;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .person2 img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
   }
 
   .sponsors {
@@ -252,12 +302,16 @@ button:hover {
     flex-wrap: wrap;
     gap: 16px;
     padding: 0;
+    margin-top: 24px;
+    width: 100%;
   }
 
   .sponsors img {
-    height: 16px;
+    height: 17.5px;
+    width: auto;
   }
 }
+
 
 
 
