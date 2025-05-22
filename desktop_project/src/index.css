@@ -213,8 +213,8 @@ button:hover {
   width: auto;
 }
 
-@media (max-width: 375px) {
-  .mainpage {
+.small-screen {
+   .mainpage {
     flex-direction: column;
     padding: 40px 24px;
     gap: 40px;
@@ -258,6 +258,7 @@ button:hover {
     height: 16px;
   }
 }
+
 
 
 /* Animations */
