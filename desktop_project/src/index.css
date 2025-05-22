@@ -342,17 +342,14 @@ button:hover {
   }
 
   .mobile-slide-menu.slideInRight {
-    transform: translateX(0);
-    opacity: 1;
+    animation: slideInRight 0.3s ease forwards;
     pointer-events: auto;
   }
 
   .mobile-slide-menu.slideOutLeft {
-    transform: translateX(100%);
-    opacity: 0;
+    animation: slideOutLeft 0.3s ease forwards;
     pointer-events: none;
   }
-
 
   .close-button {
     align-self: flex-end;
